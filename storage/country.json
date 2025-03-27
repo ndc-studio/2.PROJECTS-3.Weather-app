@@ -1,0 +1,7 @@
+{
+    "countries": [
+        { "name": "France", "code": "FR" },
+        { "name": "U.S.A", "code": "US" },
+        { "name": "Italy", "code": "IT" }
+    ]
+}
