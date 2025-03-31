@@ -1,0 +1,221 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 20em 1fr 3em;
+  text-align: center;
+  background-image: url("/public/sky.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #003b57;
+}
+
+header {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+h1 {
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 2.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.slogan {
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-left: 25em;
+  margin-right: 25em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  font-size: 1.5em;
+}
+
+main {
+  width: 98vw;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+}
+
+#div-select-options {
+  position: relative;
+  margin: auto;
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+}
+
+select {
+  font-size: 1.2em;
+}
+
+#div-compare {
+  position: relative;
+  margin: auto;
+  align-items: center;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+#div-1 {
+  width: 400px;
+  height: 300px;
+  margin-left: 300px;
+  margin-top: 50px;
+  padding: 2em;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+#div-2 {
+  width: 400px;
+  height: 300px;
+  margin-right: 300px;
+  margin-top: 50px;
+  padding: 2em;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+#select-codes-0 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+#select-codes-1 {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+#weather-today {
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 20em;
+  padding: 2em;
+  border-radius: 50%;
+  position: relative;
+  margin: auto;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 2em 4em 1fr 4em; 
+  font-size: 1.5em;
+  
+}
+
+.city_picture {
+  position: absolute;
+  width: 250px;
+  left: 1em;
+  top: 8em;
+  box-shadow: 10px 10px 10px black;
+}
+
+.ico {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+
+.title {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+  padding: 0.5em;
+}
+
+.date {
+  position: relative;
+  margin: auto;
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+  padding: 0.5em;
+  font-size: 1.2em;
+}
+
+.temp {
+  position: relative;
+  margin: auto;
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  padding: 0.5em;
+  font-size: 1.5em;
+}
+
+.desc {
+  position: relative;
+  margin: auto;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  padding: 0.5em;
+  font-size: 1.2em;
+}
+
+.wind {
+  position: relative;
+  margin: auto;
+  grid-column:  3 / 4;
+  grid-row: 3 / 4;
+  padding: 0.5em;
+  font-size: 1.2em;
+}
+
+.humidity {
+  position: relative;
+  margin: auto;
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+  padding: 0.5em;
+  font-size: 1.2em;
+}
+
+form {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+}
+
+input {
+  font-size: 1.2em;
+}
+
+button {
+  font-size: 1.2em;
+}
+
+#other-forecasts {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #888 transparent; /* Couleur + fond transparent */
+  color: black;
+}
+
+/* Pour Chrome, Edge, Safari */
+#other-forecasts::-webkit-scrollbar {
+  height: 6px; /* Barre plus fine */
+}
+
+#other-forecasts::-webkit-scrollbar-thumb {
+  background: #888; /* Couleur de la barre */
+  border-radius: 4px; /* Arrondir */
+}
+
+#other-forecasts::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Sombre au survol */
+}
+
+#other-forecasts::-webkit-scrollbar-track {
+  background: transparent; /* Cache la piste */
+}
+
