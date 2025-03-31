@@ -1,0 +1,32 @@
+name: Deploy Weather App
+
+on:
+  push:
+    branches:
+      - main  # Cette action se déclenche quand tu fais un push sur la branche 'main'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Environnement d'exécution, ici un serveur Linux
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2  # Cette étape clone ton dépôt sur le runner GitHub Actions
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'  # Spécifie la version de Node.js que tu veux
+
+    - name: Install dependencies
+      run: npm install  # Installe les dépendances de ton projet
+
+    - name: Build app
+      run: npm run build  # Compile ton application (si tu utilises npm run build)
+
+    - name: Deploy to server
+      run: echo "Déploiement en cours..."  # Remplace par ta vraie commande de déploiement
+
+    env:
+      WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}  # Injecte ta clé API Weather depuis les secrets
+      PICTURES_API_KEY: ${{ secrets.PICTURES_API_KEY }}  # Injecte ta clé API Pictures depuis les secrets
