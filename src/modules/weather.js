@@ -1,7 +1,7 @@
 import { getPicture } from "./city_picture.js";
 import { getDate } from "./timestamp.js";
 
-const apiKey = import.meta.env.VITE_WEATHER_API_KEY; // Clé api
+const apiKey = "33540e55ad4298c6759091a17506103e"; // Clé api
 
 /**
  * 
