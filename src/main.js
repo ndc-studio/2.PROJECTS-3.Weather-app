@@ -5,6 +5,7 @@ import { getWeatherApiKey } from "./modules/weather.js";
 
 getCountries();
 getMode();
+
 let pictApiKey = import.meta.env.VITE_PICTURES_API_KEY
 let weatherApiKey = import.meta.env.VITE_WEATHER_API_KEY
 
