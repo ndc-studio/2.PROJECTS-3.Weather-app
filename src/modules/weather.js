@@ -329,7 +329,7 @@ function createCard1(response, c) {
     } else if (weatherType.toLowerCase() === 'thunderstorm') {
         icon = "https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/public/thunder.png"; // Orage
     } else {
-        icon = "/sunny.png"; // Ensoleillé par defaut
+        icon = "https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/public/sunny.png"; // Ensoleillé par defaut
     };
     
     div.innerHTML =  `
