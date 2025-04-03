@@ -24,12 +24,11 @@ jobs:
 
       - name: Configure vite
         run: |
-          echo 'import { defineConfig } from "vite";' > vite.config.js
-          echo 'export default defineConfig({' >> vite.config.js
-          echo '  base: "/2.PROJECTS-3.Weather-app/",' >> vite.config.js
-          echo '});' >> vite.config.js
+          echo 'export default {
+            base: "/${{ github.event.repository.name }}/"
+          }' > vite.config.js
           cat vite.config.js
-
+      
       - name: Set up environment variables
         run: |
             echo "VITE_WEATHER_API_KEY=${{ secrets.VITE_WEATHER_API_KEY }}" >> $GITHUB_ENV
