@@ -1,7 +1,7 @@
-import { getPicture } from "./city_picture";
-import { getDate } from "./timestamp";
+import { getPicture } from "./city_picture.js";
+import { getDate } from "./timestamp.js";
 
-const apiKey = '33540e55ad4298c6759091a17506103e'; // Clé api
+const apiKey = import.meta.env.VITE_WEATHER_API_KEY; // Clé api
 
 /**
  * 
@@ -142,17 +142,17 @@ function showWeatherNow(date, temp, desc, weather, wind, humidity, city, timesta
 
     // Récupère les images en fonction de la description de l'objet de la réponse
     if (desc.toLowerCase().trim() === 'few clouds' || desc.toLowerCase().trim() === 'scattered clouds') {
-        icon = "/cloudy.png"; //Partiellement ensoleillé
+        icon = "https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/public/cloudy.png"; //Partiellement ensoleillé
     } else if (desc.toLowerCase().trim() === 'broken clouds' || desc.toLowerCase().trim() === 'overcast clouds') {
-        icon = "/clouds.png"; // Nuageux 
+        icon = "https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/public/clouds.png"; // Nuageux 
     } else if (weather.toLowerCase().trim() === 'snow') {
-        icon = "/snow.png"; // Neige
+        icon = "https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/public/snow.png"; // Neige
     } else if (weather.toLowerCase().trim() === 'rain') {
-        icon = "/rainy.png"; // Pluie
+        icon = "https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/public/rainy.png"; // Pluie
     } else if (weather.toLowerCase().trim() === 'thunderstorm') {
-        icon = "/thunder.png"; // Orage
+        icon = "https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/public/thunder.png"; // Orage
     } else {
-        icon = "/sunny.png"; // ensoleillé par defaut
+        icon = "https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/public/sunny.png"; // ensoleillé par defaut
     };
 
     const day = getDate(timestamp);
@@ -208,17 +208,17 @@ function showOtherForecasts(response) {
         let icon; //Initialise l'icon undefined
 
         if (desc.toLowerCase().trim() === 'few clouds' || desc.toLowerCase().trim() === 'scattered clouds') {
-            icon = "/cloudy.png"; //Partiellement ensoleillé
+            icon = "https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/public/cloudy.png"; //Partiellement ensoleillé
         } else if (desc.toLowerCase().trim() === 'broken clouds' || desc.toLowerCase().trim() === 'overcast clouds') {
-            icon = "/clouds.png"; // Nuageux 
+            icon = "https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/public/clouds.png"; // Nuageux 
         } else if (weatherType.toLowerCase() === 'snow') {
-            icon = "/snow.png"; // Neige
+            icon = "https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/public/snow.png"; // Neige
         } else if (weatherType.toLowerCase() === 'rain') {
-            icon = "/rainy.png"; // Pluie
+            icon = "https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/public/rainy.png"; // Pluie
         } else if (weatherType.toLowerCase() === 'thunderstorm') {
-            icon = "/thunder.png"; // Orage
+            icon = "https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/public/thunder.png"; // Orage
         } else {
-            icon = "/sunny.png"; // Ensoleillé par defaut
+            icon = "https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/public/sunny.png"; // Ensoleillé par defaut
         };
 
         const day = getDate(timestamp); // Récupère le jour (ex: mon, tue, wed, etc..)
@@ -319,15 +319,15 @@ function createCard1(response, c) {
     let icon; //Initialise l'icon undefined
 
     if (desc.toLowerCase().trim() === 'few clouds' || desc.toLowerCase().trim() === 'scattered clouds') {
-        icon = "/cloudy.png"; //Partiellement ensoleillé
+        icon = "https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/public/cloudy.png"; //Partiellement ensoleillé
     } else if (desc.toLowerCase().trim() === 'broken clouds' || desc.toLowerCase().trim() === 'overcast clouds') {
-        icon = "/clouds.png"; // Nuageux 
+        icon = "https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/public/clouds.png"; // Nuageux 
     } else if (weatherType.toLowerCase() === 'snow') {
-        icon = "/snow.png"; // Neige
+        icon = "https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/public/snow.png"; // Neige
     } else if (weatherType.toLowerCase() === 'rain') {
-        icon = "/rainy.png"; // Pluie
+        icon = "https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/public/rainy.png"; // Pluie
     } else if (weatherType.toLowerCase() === 'thunderstorm') {
-        icon = "/thunder.png"; // Orage
+        icon = "https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/public/thunder.png"; // Orage
     } else {
         icon = "/sunny.png"; // Ensoleillé par defaut
     };
@@ -375,17 +375,17 @@ function createCard2(response, c) {
     let icon; //Initialise l'icon undefined
 
     if (desc.toLowerCase().trim() === 'few clouds' || desc.toLowerCase().trim() === 'scattered clouds') {
-        icon = "/cloudy.png"; //Partiellement ensoleillé
+        icon = "https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/public/cloudy.png"; //Partiellement ensoleillé
     } else if (desc.toLowerCase().trim() === 'broken clouds' || desc.toLowerCase().trim() === 'overcast clouds') {
-        icon = "/clouds.png"; // Nuageux 
+        icon = "https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/public/clouds.png"; // Nuageux 
     } else if (weatherType.toLowerCase() === 'snow') {
-        icon = "/snow.png"; // Neige
+        icon = "https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/public/snow.png"; // Neige
     } else if (weatherType.toLowerCase() === 'rain') {
-        icon = "/rainy.png"; // Pluie
+        icon = "https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/public/rainy.png"; // Pluie
     } else if (weatherType.toLowerCase() === 'thunderstorm') {
-        icon = "/thunder.png"; // Orage
+        icon = "https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/public/thunder.png"; // Orage
     } else {
-        icon = "/sunny.png"; // Ensoleillé par defaut
+        icon = "https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/public/sunny.png"; // Ensoleillé par defaut
     };
     
     div.innerHTML =  `
