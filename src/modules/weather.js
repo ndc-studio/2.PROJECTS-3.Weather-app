@@ -1,7 +1,8 @@
 import { getPicture } from "./city_picture.js";
 import { getDate } from "./timestamp.js";
 
-const apiKey = "33540e55ad4298c6759091a17506103e"; // Clé api
+
+let weatherApiKey = import.meta.env.VITE_WEATHER_API_KEY
 
 /**
  * 
@@ -71,7 +72,7 @@ export function submit() {
  */
 export function showWeather(city, code) {
     // requète api grâce a city et code qui sont respectivement name & country
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},${code}&appid=${apiKey}`)
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},${code}&appid=${weatherApiKey}`)
         // Récupère la réponse json
         .then(function(response) {
             console.log(response); // Debug
@@ -252,7 +253,7 @@ function showOtherForecasts(response) {
 
 function getWeather1(code, city) {
         // requète api grâce a city et code qui sont respectivement name & country
-        fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},${code}&appid=${apiKey}`)
+        fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},${code}&appid=${weatherApiKey}`)
         // Récupère la réponse json
         .then(function(response) {
             console.log(response); // Debug
@@ -271,7 +272,7 @@ function getWeather1(code, city) {
 
 function getWeather2(code, city) {
     // requète api grâce a city et code qui sont respectivement name & country
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},${code}&appid=${apiKey}`)
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},${code}&appid=${weatherApiKey}`)
         // Récupère la réponse json
         .then(function(response) {
             console.log(response); // Debug
