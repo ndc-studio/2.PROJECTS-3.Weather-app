@@ -17,27 +17,27 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # Ajuste la version selon ton projet
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install 
 
       - name: Configure vite
         run: |
           echo 'export default {
             base: "/${{ github.event.repository.name }}/"
           }' > vite.config.js
-
-      - name: Installer les dépendances
-        run: npm install 
-        env:
-          VITE_WEATHER_API_KEY: ${{ secrets.VITE_WEATHER_API_KEY }}
-          VITE_PICTURES_API_KEY: ${{ secrets.VITE_PICTURES_API_KEY }}
-
-      - name: Construire le projet
+          cat vite.config.js
+      
+      - name: Set up environment variables
+        run: |
+            echo "VITE_WEATHER_API_KEY=${{ secrets.VITE_WEATHER_API_KEY }}" >> $GITHUB_ENV
+            echo "VITE_PICTURES_API_KEY=${{ secrets.VITE_PICTURES_API_KEY }}" >> $GITHUB_ENV
+      
+      - name: Build project
         run: npm run build
-        env:
-          VITE_WEATHER_API_KEY: ${{ secrets.VITE_WEATHER_API_KEY }}
-          VITE_PICTURES_API_KEY: ${{ secrets.VITE_PICTURES_API_KEY }}
 
-      - name: Upload des fichiers prêts pour la production
+      - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
         with:
           name: production-files
@@ -50,13 +50,13 @@ jobs:
     if: github.ref == 'refs/heads/main'
 
     steps:
-      - name: Télécharger l’artifact
+      - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: production-files
           path: ./dist
 
-      - name: Déployer sur GitHub Pages
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
