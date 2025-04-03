@@ -1,9 +1,12 @@
 import { getPicture } from "./city_picture.js";
 import { getDate } from "./timestamp.js";
 
+let weatherApiKey;
 
-let weatherApiKey = import.meta.env.VITE_WEATHER_API_KEY
-console.log(weatherApiKey);
+export function getWeatherApiKey(api) {
+    weatherApiKey = api;
+}
+
 /**
  * 
  * @description -- Recupère l'id et la class de l'option selectionnée

@@ -1,7 +1,15 @@
+
+
+let pictApiKey;
+
+export function getPictApiKey(api) {
+    pictApiKey = api;
+    console.log(pictApiKey)
+}
+
 export function getPicture(cityName) {
     let city = cityName.toLowerCase();
-    let apiKey = import.meta.env.VITE_PICTURES_API_KEY
-    fetch(`https://api.unsplash.com/search/photos?page=1&query=${city}&client_id=${apiKey}`)
+    fetch(`https://api.unsplash.com/search/photos?page=1&query=${city}&client_id=${pictApiKey}`)
         .then( function(response) {
             return response.json();
         })
