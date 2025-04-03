@@ -1,5 +1,3 @@
-
-
 let pictApiKey;
 
 export function getPictApiKey(api) {
