@@ -21,25 +21,23 @@ jobs:
         with:
           node-version: 18
 
-      - name: Installer les dépendances
-        run: npm install
+      - name: Créer un fichier vite.config.js
+        run: |
+          echo "export default { base: '/${{ github.event.repository.name }}/' };" > vite.config.js
 
       - name: Créer un fichier .env
         run: |
           echo "VITE_WEATHER_API_KEY=${{ secrets.VITE_WEATHER_API_KEY }}" >> .env
           echo "VITE_PICTURES_API_KEY=${{ secrets.VITE_PICTURES_API_KEY }}" >> .env
-          
+
+      - name: Vérifier les variables d'environnement
+        run: cat .env  # Vérifie que les clés API sont bien présentes
+
+      - name: Installer les dépendances
+        run: npm install
+
       - name: Construire le projet
         run: npm run build
-
-      - name: Vérifier les variables après le build
-        run: npm run build && cat .env
-
-      - name: Configure vite
-        run: |
-            echo 'export default {
-            base: "/${{ github.event.repository.name }}/"
-            }' > vite.config.js
 
       - name: Déployer sur GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
