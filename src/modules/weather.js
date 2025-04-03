@@ -154,7 +154,7 @@ function showWeatherNow(date, temp, desc, weather, wind, humidity, city, timesta
     } else {
         icon = "../../public/sunny.png"; // ensoleillé par defaut
     };
-    https://ndc-studio.github.io/2.PROJECTS-3.Weather-app/
+    
     const day = getDate(timestamp);
 
     // Ajout tout le contenu du div pour afficher la meteo du moment css y compris
