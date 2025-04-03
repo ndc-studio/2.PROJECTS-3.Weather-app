@@ -18,23 +18,24 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20' # Ajuste la version selon ton projet
+
       - name: Configure vite
         run: |
           echo 'export default {
             base: "/${{ github.event.repository.name }}/"
           }' > vite.config.js
 
-      - name: Créer un fichier .env
-        run: |
-          echo "VITE_WEATHER_API_KEY=${{ secrets.VITE_WEATHER_API_KEY }}" >> .env
-          echo "VITE_PICTURES_API_KEY=${{ secrets.VITE_PICTURES_API_KEY }}" >> .env
-          cat .env
-          
       - name: Installer les dépendances
         run: npm install 
+        env:
+          VITE_WEATHER_API_KEY: ${{ secrets.VITE_WEATHER_API_KEY }}
+          VITE_PICTURES_API_KEY: ${{ secrets.VITE_PICTURES_API_KEY }}
 
       - name: Construire le projet
         run: npm run build
+        env:
+          VITE_WEATHER_API_KEY: ${{ secrets.VITE_WEATHER_API_KEY }}
+          VITE_PICTURES_API_KEY: ${{ secrets.VITE_PICTURES_API_KEY }}
 
       - name: Upload des fichiers prêts pour la production
         uses: actions/upload-artifact@v4
