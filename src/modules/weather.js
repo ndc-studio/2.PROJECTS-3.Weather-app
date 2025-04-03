@@ -1,5 +1,5 @@
-import { getPicture } from "./city_picture";
-import { getDate } from "./timestamp";
+import { getPicture } from "./city_picture.js";
+import { getDate } from "./timestamp.js";
 
 const apiKey = '33540e55ad4298c6759091a17506103e'; // Clé api
 
