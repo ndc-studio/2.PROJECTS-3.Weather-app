@@ -3,7 +3,7 @@ import { getDate } from "./timestamp.js";
 
 
 let weatherApiKey = import.meta.env.VITE_WEATHER_API_KEY
-
+console.log(weatherApiKey);
 /**
  * 
  * @description -- Recupère l'id et la class de l'option selectionnée
