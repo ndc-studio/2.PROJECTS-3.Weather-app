@@ -17,12 +17,13 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # Ajuste la version si nécessaire
+          node-version: '20' # Assure-toi que c'est la bonne version pour ton projet
 
       - name: Create .env file
         run: |
-          echo "VITE_PICTURES_API_KEY=${{ secrets.VITE_PICTURES_API_KEY }}" >> .env
           echo "VITE_WEATHER_API_KEY=${{ secrets.VITE_WEATHER_API_KEY }}" >> .env
+          echo "VITE_PICTURES_API_KEY=${{ secrets.VITE_PICTURES_API_KEY }}" >> .env
+          cat .env  # Afficher le contenu de .env pour vérifier que les clés sont bien injectées
 
       - name: Install dependencies
         run: npm install 
