@@ -31,6 +31,12 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Setup vite
+        run: |
+          echo 'export default {
+          base: "/${{ github.event.repository.name }}/"
+          }' > vite.config.js
+
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
         with:
