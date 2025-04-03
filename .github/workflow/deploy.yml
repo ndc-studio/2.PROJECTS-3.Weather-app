@@ -28,6 +28,7 @@ jobs:
         run: |
           echo "VITE_WEATHER_API_KEY=${{ secrets.VITE_WEATHER_API_KEY }}" >> $GITHUB_ENV
           echo "VITE_PICTURES_API_KEY=${{ secrets.VITE_PICTURES_API_KEY }}" >> $GITHUB_ENV
+          
       - name: Installer les dépendances
         run: npm install 
 
@@ -58,9 +59,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-
-
-      - name: Créer un fichier .env
-        run: |
-          echo "VITE_WEATHER_API_KEY=${{ secrets.VITE_WEATHER_API_KEY }}" >> .env
-          echo "VITE_PICTURES_API_KEY=${{ secrets.VITE_PICTURES_API_KEY }}" >> .env
