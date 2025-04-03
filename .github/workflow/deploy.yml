@@ -28,6 +28,7 @@ jobs:
         run: |
           echo "VITE_WEATHER_API_KEY=${{ secrets.VITE_WEATHER_API_KEY }}" >> .env
           echo "VITE_PICTURES_API_KEY=${{ secrets.VITE_PICTURES_API_KEY }}" >> .env
+          cat .env
           
       - name: Installer les dépendances
         run: npm install 
