@@ -137,7 +137,6 @@ function selectOptions(response, div) {
  */
 export function getAllCountries() {
     const form_compare = document.getElementById('form-1'); // Récupère le <form>
-    const apiKey = '33540e55ad4298c6759091a17506103e'; // Initilalise la clé API de openweathermap
     const main = document.getElementById('container');
 
     let div = document.getElementById('div-compare');
