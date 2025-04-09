@@ -43,7 +43,6 @@ function submitButton(event) {
     input.value = ""; // Reinitialise la valeur de <input> après la manipulation
 }
 
-
 /**
  * 
  * @description --Récupère les données de l'api Geocoding pour une ville demandée
