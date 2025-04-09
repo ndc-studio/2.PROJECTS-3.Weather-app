@@ -33,6 +33,9 @@ jobs:
         run: |
           echo "VITE_WEATHER_API_KEY=${{ secrets.VITE_WEATHER_API_KEY }}" >> .env
           echo "VITE_PICTURES_API_KEY=${{ secrets.VITE_PICTURES_API_KEY }}" >> .env
+          
+      - name: Display .env file (debug)
+        run: cat .env
       
       - name: Build project
         run: npm run build
