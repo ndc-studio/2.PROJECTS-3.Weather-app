@@ -1,5 +1,5 @@
 import { getPictApiKey } from "./modules/city_picture.js";
-import { getCountries } from "./modules/countries.js";
+import { getCountries, getCountryApiKey } from "./modules/countries.js";
 import { getMode } from "./modules/mode.js";
 import { getWeatherApiKey } from "./modules/weather.js";
 import {VITE_PICTURES_API_KEY} from "../env.js";
@@ -18,3 +18,4 @@ let weatherApiKey = VITE_WEATHER_API_KEY;
 
 getWeatherApiKey(weatherApiKey);
 getPictApiKey(pictApiKey);
+getCountryApiKey(weatherApiKey);

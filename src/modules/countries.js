@@ -1,5 +1,10 @@
 import { getCountryCode, showWeather, getCode, submit } from "./weather.js";
 
+let apiKey;
+
+export function getCountryApiKey(api) {
+    apiKey = api;
+}
 
 function submitButton(event) {
     const apiKey = '33540e55ad4298c6759091a17506103e'; // Initilalise la clé API de openweathermap
