@@ -27,7 +27,9 @@ jobs:
           echo 'export default {
             base: "/${{ github.event.repository.name }}/"
           }' > vite.config.js
-          cat vite.config.js
+
+      - name: Display vite.config.js file (debug)    
+        run: cat vite.config.js
       
       - name: Create .env file
         run: |
