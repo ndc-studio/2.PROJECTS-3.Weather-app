@@ -7,7 +7,6 @@ export function getCountryApiKey(api) {
 }
 
 function submitButton(event) {
-    const apiKey = '33540e55ad4298c6759091a17506103e'; // Initilalise la clé API de openweathermap
     event.preventDefault(); // Evite d'actualiser la page lors du submit.
     const lastWeather = document.getElementById('weather-today'); // Tente de récupérer le <div id="weather-today"> 
     // Si il existe on le supprime
