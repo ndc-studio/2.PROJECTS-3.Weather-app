@@ -1,7 +1,7 @@
 import { getCountryCode, showWeather, getCode, submit } from "./weather.js";
 
 let apiKey;
-
+// import.meta.env.VITE_WEATHER_API_KEY;
 export function getCountryApiKey(api) {
     apiKey = api;
 }
