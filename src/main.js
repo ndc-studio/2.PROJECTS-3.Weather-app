@@ -7,14 +7,13 @@ getCountries();
 getMode();
 
 
-let pictApiKey = __VITE_PICTURES_API_KEY__;
-let weatherApiKey = __VITE_WEATHER_API_KEY__;
+let pictApiKey = import.meta.env.VITE_PICTURES_API_KEY;
+let weatherApiKey = import.meta.env.VITE_WEATHER_API_KEY;
 
 /*
 let pictApiKey = "cRYK1UNWamzF3f3MrVKYZ3DXDwA1HyNE8ggWYjpY6ms"
 let weatherApiKey = "33540e55ad4298c6759091a17506103e"
 */
-
 getWeatherApiKey(weatherApiKey);
 getPictApiKey(pictApiKey);
 getCountryApiKey(weatherApiKey);
