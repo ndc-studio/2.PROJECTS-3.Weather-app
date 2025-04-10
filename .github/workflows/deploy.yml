@@ -24,8 +24,9 @@ jobs:
 
       - name: Configure vite
         run: |
-          echo 'import { defineConfig } from "vite"
-          echo 'export default defineConfig(({ mode }) => {
+          echo '
+          import { defineConfig } from "vite"
+          export default defineConfig(({ mode }) => {
             const env = loadEnv(mode, process.cwd())
             return {
               base: '/nom-du-repo/',
@@ -34,7 +35,8 @@ jobs:
                 __VITE_WEATHER_API_KEY__: JSON.stringify(env.VITE_WEATHER_API_KEY),
               }
             }
-          })' > vite.config.js
+          })
+          ' > vite.config.js
 
       - name: Display vite.config.js file (debug)    
         run: cat vite.config.js
